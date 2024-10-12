@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoCapture Kiosk</title>
+    <link rel="stylesheet" href="Age-gender.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1a1f89beb9.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+          background-image: url('bg1.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-header"> DoCapture</div>
+        <div><button class="right-header">About us</button></div>
+    </div>
+    <a href="http://localhost/StudentLogIn/Main.html">
+        <button class="back">&#8592</button>
+    </a>
+    <div class="question">
+        <p>Input your Age</p>
+    </div>
+    <div class="keyboard-container">
+        <input type="text" id="inputField">
+        <div class="keyboard" id="keyboard">
+            <button onclick="addToInput('1')">1</button>
+            <button onclick="addToInput('2')">2</button>
+            <button onclick="addToInput('3')">3</button>
+            <button onclick="addToInput('4')">4</button>
+            <button onclick="addToInput('5')">5</button>
+            <button onclick="addToInput('6')">6</button>
+            <button onclick="addToInput('7')">7</button>
+            <button onclick="addToInput('8')">8</button>
+            <button onclick="addToInput('9')">9</button>
+            <button onclick="addToInput('0')">0</button>
+            <button class="OK" onclick="backspace()">&#8592</button>
+            <button class="OK" onclick="recordInput()">OK</button>
+            <br>
+        </div>
+    </div>
+    <div class="question">
+        <p >Select your Gender</p>
+    </div>
+    <div class="button-div">
+        <div class="leftbutton-div"> 
+            <button class="button-male"><i class="fa-solid fa-mars"></i></button>
+        </div>
+        <div class="rightbutton-div">
+            <button class="button-female"><i class="fa-solid fa-venus"></i></button>
+        </div>
+    </div>
+    <div class="label-div">
+        <div></div>
+        <div class="middle-div">
+            <div class="left-label">MALE</div>
+            <div class="right-label">FEMALE</div>
+        </div>
+        <div></div>
+    </div>
+    <div class="button-div">
+        <div></div>
+        <div>
+            <a href="http://127.0.0.1:5000">
+                <button class="submit-button">Submit</button>
+            </a>
+            </div>
+        <div></div>
+    </div>
+    <script src="Age-Gender.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+body{
+    margin: 0px;
+    font-family: Inter,Arial;
+    background-color: #ecffdf;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to bottom,#3FCA7F, #BCF3B3);
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 25px;
+    box-shadow: 0px 5px 10px rgba(0,0,0, 0.15);
+    z-index: 100;
+}
+.left-header{
+    color: white;
+    margin-left: 20px;
+}
+.right-header{
+    background-color: transparent;
+}
+.logout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-top: 16px;
+    border: none;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0, 0.15);
+}
+.right-header span{
+    margin: 0px;
+    margin-right: 15px;
+    font-size: 15px;
+    color: black;
+}
+#back{
+    display: none;
+    position: fixed;
+    margin-left: 10px;
+    margin-top: -40px;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    z-index: 20;
+}
+.welcome{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    font-weight: 500;
+}
+.outer{
+    display: flex;
+    justify-content: center;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+}
+.options button{
+    padding: 15px 35px;
+    font-size: 25px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0, .5);
+    opacity: 0;
+    transform: translateY(20%); 
+    animation: slideUp .5s ease-in forwards;
+}
+@keyframes slideUp {
+    from {
+    opacity: 0;
+    transform: translateY(30%); 
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.navigation-bar{
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 100;
+}
+.navigation-bar button{
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: rgb(0, 186, 0);
+}
+.navigation-bar button:focus{
+    background-color: rgb(30, 30, 30) ;
+    margin-top: -8px;
+    border-radius: 200px;
+}
+.navigation-bar span{
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 186, 0);
+}
+#frame{
+    display: none;
+    position: absolute;
+    top: 70px;
+    height: 720px;
+    background-color: #fff;
+    border: none;
+    width: 99%;
+}
+.logout-prompt{
+    display: none;
+    position: absolute;
+    top: calc(35% + 0px); 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+    width: 250px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 5px 10px rgba(0,0,0, .5);
+}
+.yes-no{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+.yes-no button{
+    width: 70px;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0,0,0, .5);
+    border-radius: 10px;
+
+}
+
+.no{
+    background-color: red;
+}
+.yes{
+    background-color: #00af52;
+}

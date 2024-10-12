@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    font-family: Roboto Mono,Arial;
+    background-color: #ecffdf;
+}
+.outer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: row;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+}
+.options button{
+    padding: 20px 40px;
+    font-size: 20px;
+    margin: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0, .5);
+    opacity: 0;
+    transform: translateY(20%); 
+    animation: slideUp .5s ease-in forwards;
+}
+@keyframes slideUp {
+    from {
+    opacity: 0;
+    transform: translateY(30%); 
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+span{
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: rgb(0, 186, 0);
+}
+#frame{
+    display: none;
+    position: absolute;
+    top: 0px;
+    height: 720px;
+    width: 460px;
+}

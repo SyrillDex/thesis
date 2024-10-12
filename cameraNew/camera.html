@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camera Capture</title>
+<style>
+    body{
+        text-align: center;
+        margin: 0px;
+        font-family: Roboto Mono,Arial;
+        background-color: #f2f2f2;
+    }
+    h2{
+        margin-bottom: 5px;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        background: linear-gradient(to bottom, #00af52, #c2ffbb);
+        height: 70px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+        font-size: 25px;
+        box-shadow: 0px 5px 10px rgba(0,0,0, 0.15);
+    }
+    .left-header{
+        color: white;
+        margin-left: 20px;
+    }
+    .right-header{
+        background-color: transparent;
+        border: none;
+        color: white;
+        margin-right: 20px;
+        font-size: 20px;
+    }
+    #capture-btn{
+        background: linear-gradient(to bottom, #00af52, #16ee73);
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        width: 100px;
+        padding: 7px;
+    }
+    #camera-feed{
+        width: 100vw; /* Full width of the viewport */
+        height:65vh; /* Full height of the viewport */
+        overflow: hidden; /* Hide overflow to prevent overlapping */
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    #video-preview{
+        transform: rotate(90deg); /* Rotate 90 degrees, adjust as needed */
+        -webkit-transform: rotate(90deg); /* For Safari */
+        -moz-transform: rotate(90deg); /* For Firefox */
+        -ms-transform: rotate(90deg); /* For IE */
+        -o-transform: rotate(90deg); /* For Opera */
+        width: 100%; /* Make sure the rotated video fits within its container */
+        height: 100%;
+        position: absolute; /* Position the video element absolutely within its container */
+        top: 0px; /* Position video element at the top */
+        left: 0; 
+        border: 3px #00af52 solid;
+    }
+</style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="left-header"> DoCapture</div>
+        <div><button class="right-header">About us</button></div>
+    </div>
+    <h3>Capture Document</h3 >
+
+    <div id="camera-feed">
+        <video id="video-preview" autoplay playsinline></video>
+    </div>
+    <button id="capture-btn">Capture</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <script>
+        const video = document.getElementById('video-preview');
+        const captureBtn = document.getElementById('capture-btn');
+        const canvas = document.getElementById('canvas');
+        const constraints = {
+            video: true
+        };
+
+        // Access the user's camera
+        async function initCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            } catch (error) {
+                console.error('Error accessing user media:', error);
+            }
+        }
+
+        // Set video stream to the video element
+        function handleSuccess(stream) {
+            video.srcObject = stream;
+        }
+
+        // Capture photo from the video stream
+        function capturePhoto() {
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            // Convert canvas to base64 image
+            const imgData = canvas.toDataURL('image/jpeg');
+            // Do something with the image data, like send it to a server
+            console.log(imgData);
+        }
+
+        // Event listener for capture button
+        captureBtn.addEventListener('click', capturePhoto);
+
+        // Initialize camera on page load
+        initCamera();
+    </script>
+
+</body>
+</html>

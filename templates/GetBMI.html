@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoCapture Kiosk</title>
+<link rel="stylesheet" href="GetBMI.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    body {
+      background-image: url('bg1.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-header"> DoCapture</div>
+        <div><button class="right-header">About us</button></div>
+    </div>
+    <div class="container">
+        <div class="message">Please step on the platform... <br> <br>Stand Straight and Don't Move we are getting your Height, Weight and BMI</div>
+        <div id="loading-spinner"></div>
+        <a href="BMIResults.php"><button id="content">See Results</button></a>
+    </div>
+<script>
+        // Get the loading spinner and content elements
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const contentElement = document.getElementById('content');
+
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Set a timeout to hide the loading spinner and reveal the content after 3 seconds
+    setTimeout(() => {
+        // Hide the loading spinner
+        loadingSpinner.style.display = 'none';
+
+        // Show the content
+        contentElement.style.display = 'block';
+    }, 15000); // Show for 3 seconds (3000 milliseconds)
+</script>
+</body>
+</html>
